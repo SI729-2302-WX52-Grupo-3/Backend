@@ -1,4 +1,4 @@
-package com.example.repair;
+package com.example.repair.repair;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
