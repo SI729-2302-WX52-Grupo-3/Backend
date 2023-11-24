@@ -1,6 +1,6 @@
-package com.example.repair.repair.appointment.domain.service;
+package com.example.medicare.api.appointment.domain.service;
 
-import com.example.repair.repair.appointment.domain.model.entities.PaymentDetail;
+import com.example.medicare.api.appointment.domain.model.entities.PaymentDetail;
 
 import java.util.List;
 

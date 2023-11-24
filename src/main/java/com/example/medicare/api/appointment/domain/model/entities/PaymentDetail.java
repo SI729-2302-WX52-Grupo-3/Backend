@@ -1,4 +1,4 @@
-package com.example.repair.repair.appointment.domain.model.entities;
+package com.example.medicare.api.appointment.domain.model.entities;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;

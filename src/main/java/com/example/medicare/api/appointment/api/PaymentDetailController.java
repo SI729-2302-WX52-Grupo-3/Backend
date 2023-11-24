@@ -1,7 +1,7 @@
-package com.example.repair.repair.appointment.api;
+package com.example.medicare.api.appointment.api;
 
-import com.example.repair.repair.appointment.domain.model.entities.PaymentDetail;
-import com.example.repair.repair.appointment.domain.service.PaymentDetailService;
+import com.example.medicare.api.appointment.domain.model.entities.PaymentDetail;
+import com.example.medicare.api.appointment.domain.service.PaymentDetailService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

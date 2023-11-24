@@ -1,12 +1,10 @@
-package com.example.repair.repair.appointment.service;
+package com.example.medicare.api.appointment.service;
 
-import com.example.repair.repair.appointment.domain.model.entities.PaymentDetail;
-import com.example.repair.repair.appointment.domain.persistence.PaymentDetailRepository;
-import com.example.repair.repair.appointment.domain.persistence.PaymentRepository;
-import com.example.repair.repair.appointment.domain.service.PaymentDetailService;
-import com.example.repair.repair.appointment.domain.service.PaymentService;
-import com.example.repair.repair.shared.exception.FetchIdNotFoundException;
-import com.example.repair.repair.shared.exception.ResourceValidationException;
+import com.example.medicare.api.appointment.domain.model.entities.PaymentDetail;
+import com.example.medicare.api.appointment.domain.persistence.PaymentDetailRepository;
+import com.example.medicare.api.appointment.domain.service.PaymentDetailService;
+import com.example.medicare.api.shared.exception.FetchIdNotFoundException;
+import com.example.medicare.api.shared.exception.ResourceValidationException;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validator;
 import lombok.AllArgsConstructor;
