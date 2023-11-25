@@ -1,23 +1,23 @@
-package com.example.medicare.api.appointment.domain.model.entities;
+package com.example.medicare.api.appointment.resource;
 
 import com.example.medicare.api.doctor.domain.model.entities.Doctor;
 import com.example.medicare.api.patient.domain.model.entities.Patient;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Date;
 
 @Getter
 @Setter
-@Entity
-@Table(name = "appointments")
-public class Appointment {
+@With
+@AllArgsConstructor
+@NoArgsConstructor
+public class CreateAppointmentResource {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @NotNull
     @Column(name = "date", nullable = false)
@@ -33,9 +33,4 @@ public class Appointment {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "doctor_id")
     private Doctor doctor;
-
-
-
-
-
 }

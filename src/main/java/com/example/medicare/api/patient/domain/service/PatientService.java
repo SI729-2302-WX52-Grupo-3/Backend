@@ -12,4 +12,5 @@ public interface PatientService {
     Patient fetchById(Integer id);
     boolean deleteById(Integer id);
     List<Patient> fetchAll();
+    Patient login(String email, String password);
 }

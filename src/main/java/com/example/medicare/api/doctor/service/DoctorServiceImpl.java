@@ -32,7 +32,22 @@ public class DoctorServiceImpl implements DoctorService {
 
     @Override
     public Doctor update(Doctor doctor, Integer id) {
-        return null;
+        Doctor existingDoctor = fetchById(id);
+
+        if(existingDoctor != null){
+            existingDoctor.setSpeciality(doctor.getSpeciality());
+            existingDoctor.setEmail(doctor.getEmail());
+            existingDoctor.setPassword(doctor.getPassword());
+            existingDoctor.setName(doctor.getName());
+            existingDoctor.setLastname(doctor.getLastname());
+
+            return doctorRepository.save(existingDoctor);
+
+        }
+        else{
+            throw new FetchIdNotFoundException("Doctor", id);
+        }
+
     }
 
     @Override
@@ -57,5 +72,10 @@ public class DoctorServiceImpl implements DoctorService {
     @Override
     public List<Doctor> fetchAll() {
         return doctorRepository.findAll();
+    }
+
+    @Override
+    public Doctor login(String email, String password) {
+        return doctorRepository.findByEmailAndPassword(email, password);
     }
 }

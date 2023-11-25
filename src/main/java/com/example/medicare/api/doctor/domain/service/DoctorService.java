@@ -11,5 +11,6 @@ public interface DoctorService  {
     Doctor fetchById(Integer id);
     boolean deleteById(Integer id);
     List<Doctor> fetchAll();
+    Doctor login(String email, String password);
 
 }

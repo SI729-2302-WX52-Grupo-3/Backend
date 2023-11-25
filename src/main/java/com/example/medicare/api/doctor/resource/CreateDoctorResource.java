@@ -1,21 +1,20 @@
-package com.example.medicare.api.doctor.domain.model.entities;
+package com.example.medicare.api.doctor.resource;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
-@Entity
-@Table(name = "doctors")
-public class Doctor {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+@With
+@AllArgsConstructor
+@NoArgsConstructor
+public class CreateDoctorResource {
 
     @NotNull
     @NotBlank
@@ -45,5 +44,4 @@ public class Doctor {
     @Size(min = 6, max = 50)
     @Column(name = "password", length = 50, nullable = false)
     private String password;
-
 }

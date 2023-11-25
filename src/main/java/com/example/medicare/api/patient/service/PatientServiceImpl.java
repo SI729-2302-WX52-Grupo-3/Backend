@@ -32,7 +32,20 @@ public class PatientServiceImpl implements PatientService{
 
     @Override
     public Patient update (Patient patient, Integer id){
-        return null;
+        Patient existingPatient = fetchById(id);
+
+        if(existingPatient != null){
+            existingPatient.setAge(patient.getAge());
+            existingPatient.setEmail(patient.getEmail());
+            existingPatient.setPassword(patient.getPassword());
+            existingPatient.setAge(patient.getAge());
+            existingPatient.setName(patient.getName());
+            existingPatient.setLastname(patient.getLastname());
+
+            return patientRepository.save(existingPatient);
+        }else{
+            throw new FetchIdNotFoundException("Patient", id);
+        }
     }
 
     @Override
@@ -59,4 +72,8 @@ public class PatientServiceImpl implements PatientService{
         return patientRepository.findAll();
     }
 
+    @Override
+    public Patient login(String email, String password) {
+        return patientRepository.findByEmailAndPassword(email, password);
+    }
 }

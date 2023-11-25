@@ -1,20 +1,20 @@
-package com.example.medicare.api.appointment.domain.model.entities;
+package com.example.medicare.api.appointment.resource;
 
+import com.example.medicare.api.appointment.domain.model.entities.Appointment;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
-@Entity
-@Table(name = "payment_details")
-public class PaymentDetail {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+@With
+@AllArgsConstructor
+@NoArgsConstructor
+public class CreatePaymentResource {
+    @OneToOne
+    @JoinColumn(name = "appointment_id")
+    private Appointment appointment;
 
     @NotNull
     @Min(value = 0)
@@ -35,5 +35,4 @@ public class PaymentDetail {
     @Min(value = 0)
     @Column(name = "retention_amount", columnDefinition = "decimal(10,2)")
     private double retention_amount;
-
 }

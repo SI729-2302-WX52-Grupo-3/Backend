@@ -34,6 +34,17 @@ public class Patient {
     @Column(name = "age", columnDefinition = "smallint")
     private int age;
 
+    @NotNull
+    @NotBlank
+    @Column(name = "email", length = 50, nullable = false)
+    private String email;
+
+    @NotNull
+    @NotBlank
+    @Size(min = 6, max = 50)
+    @Column(name = "password", length = 50, nullable = false)
+    private String password;
+
 
 
 }
