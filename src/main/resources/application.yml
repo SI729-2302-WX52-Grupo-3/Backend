@@ -1,0 +1,11 @@
+documentation:
+  application:
+    description: @project.description@
+    version: @project.version@
+
+springdoc:
+  api-docs:
+    path: /api-docs
+
+  swagger-ui:
+    path: /swagger-ui/index.html
