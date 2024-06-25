@@ -18,20 +18,14 @@ public class Patient {
 
     @NotNull
     @NotBlank
-    @Size(min = 7, max = 50)
-    @Column(name = "name", length = 50, nullable = false)
+    @Column(name = "name")
     private String name;
 
-    @NotNull
-    @NotBlank
-    @Size(min = 7, max = 50)
-    @Column(name = "lastname", length = 50, nullable = false)
+    @Column(name = "lastname")
     private String lastname;
 
     @NotNull
-    @Min(value = 18)
-    @Max(value = 65)
-    @Column(name = "age", columnDefinition = "smallint")
+    @Column(name = "age")
     private int age;
 
     @NotNull
@@ -41,10 +35,27 @@ public class Patient {
 
     @NotNull
     @NotBlank
-    @Size(min = 6, max = 50)
-    @Column(name = "password", length = 50, nullable = false)
+    @Column(name = "password")
     private String password;
 
+    @NotNull
+    @Column(name = "height")
+    private double height;
 
+    @NotNull
+    @Column(name = "weight")
+    private double weight;
 
+    @NotNull
+    @Column(name = "body_mass_index")
+    private double body_mass_index;
+
+    @Column(name = "fecha_nacimiento")
+    private String fecha_nacimiento;
+
+    @Column(name = "telefono")
+    private String telefono;
+
+    @Column(name = "profile_image")
+    private String profile_image;
 }

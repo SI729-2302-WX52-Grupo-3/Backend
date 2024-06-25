@@ -19,4 +19,10 @@ public class RecordResource {
     private Appointment appointment;
     private Date date;
     private String description;
+    private double height;
+    private double weight;
+    private double body_mass_index;
+    private String medicine;
+    private String natural_factors;
+    private String pathological_factors;
 }

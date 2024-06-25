@@ -7,10 +7,11 @@ import java.util.List;
 public interface DoctorService  {
 
     Doctor save(Doctor doctor);
-    Doctor update(Doctor doctor, Integer id);
+    Doctor update(Doctor doctor);
     Doctor fetchById(Integer id);
     boolean deleteById(Integer id);
     List<Doctor> fetchAll();
     Doctor login(String email, String password);
+    Doctor findy
 
 }

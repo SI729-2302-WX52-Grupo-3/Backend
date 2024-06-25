@@ -1,5 +1,7 @@
 package com.example.medicare.api.patient.resource;
 
+import jakarta.persistence.Column;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 @Getter
@@ -15,4 +17,10 @@ public class PatientResource {
         private int age;
         private String email;
         private String password;
+        private double height;
+        private double weight;
+        private double body_mass_index;
+        private String fecha_nacimiento;
+        private String telefono;
+        private String profile_image;
 }

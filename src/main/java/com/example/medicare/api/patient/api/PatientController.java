@@ -25,7 +25,7 @@ public class PatientController {
     public ResponseEntity<PatientResource> save(@RequestBody CreatePatientResource resource) {
         return new ResponseEntity<>(
                 patientMapper.toResource(patientService.save(patientMapper.toEntity(resource))),
-                HttpStatus.CREATED
+                HttpStatus.OK
         );
     }
 
@@ -34,9 +34,9 @@ public class PatientController {
         return ResponseEntity.ok(patientService.fetchAll());
     }
 
-    @PutMapping("/{id}")
-    public Patient update(@RequestBody Patient patient, @PathVariable("id") Integer id) {
-        return patientService.update(patient, id);
+    @PutMapping()
+    public Patient update(@RequestBody Patient patient) {
+        return patientService.update(patient);
     }
 
     @GetMapping("/{id}")

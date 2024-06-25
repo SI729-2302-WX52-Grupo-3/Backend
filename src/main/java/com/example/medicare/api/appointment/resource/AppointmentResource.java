@@ -21,7 +21,7 @@ public class AppointmentResource {
     private Long id;
     private Date date;
     private String description;
-    private Patient patient;
-    private Doctor doctor;
+    private Integer patient_id;
+    private Integer doctor_id;
 
 }

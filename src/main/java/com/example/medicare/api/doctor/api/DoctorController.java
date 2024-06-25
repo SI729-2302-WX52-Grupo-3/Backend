@@ -34,9 +34,9 @@ public class DoctorController {
         );
     }
 
-    @PutMapping("/{id}")
-    public Doctor update(@RequestBody Doctor doctor, @PathVariable("id") Integer id) {
-        return doctorService.update(doctor, id);
+    @PutMapping()
+    public Doctor update(@RequestBody Doctor doctor) {
+        return doctorService.update(doctor);
     }
 
     @GetMapping("/{id}")

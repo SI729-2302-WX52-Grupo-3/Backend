@@ -19,7 +19,13 @@ public class DoctorResource {
     private Integer id;
     private String name;
     private String lastname;
-    private String speciality;
+    private String specialty;
     private String email;
     private String password;
+    private double height;
+    private double weight;
+    private double body_mass_index;
+    private String profile_image;
+    private String puntuation;
+    private String costo;
 }

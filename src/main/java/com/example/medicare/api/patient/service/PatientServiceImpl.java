@@ -31,8 +31,8 @@ public class PatientServiceImpl implements PatientService{
     }
 
     @Override
-    public Patient update (Patient patient, Integer id){
-        Patient existingPatient = fetchById(id);
+    public Patient update (Patient patient){
+        Patient existingPatient = fetchById(patient.getId());
 
         if(existingPatient != null){
             existingPatient.setAge(patient.getAge());
@@ -41,10 +41,17 @@ public class PatientServiceImpl implements PatientService{
             existingPatient.setAge(patient.getAge());
             existingPatient.setName(patient.getName());
             existingPatient.setLastname(patient.getLastname());
+            existingPatient.setWeight(patient.getWeight());
+            existingPatient.setHeight(patient.getHeight());
+            existingPatient.setBody_mass_index(patient.getBody_mass_index());
+            existingPatient.setFecha_nacimiento(patient.getFecha_nacimiento());
+            existingPatient.setTelefono(patient.getTelefono());
+            existingPatient.setProfile_image(patient.getProfile_image());
+
 
             return patientRepository.save(existingPatient);
         }else{
-            throw new FetchIdNotFoundException("Patient", id);
+            throw new FetchIdNotFoundException("Patient", patient.getId());
         }
     }
 

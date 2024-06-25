@@ -18,22 +18,16 @@ public class Doctor {
     private Integer id;
 
     @NotNull
-    @NotBlank
-    @Size(min = 7, max = 50)
-    @Column(name = "name", length = 50, nullable = false)
+    @Column(name = "name")
     private String name;
 
     @NotNull
-    @NotBlank
-    @Size(min = 7, max = 50)
-    @Column(name = "lastname", length = 50, nullable = false)
+    @Column(name = "lastname")
     private String lastname;
 
     @NotNull
-    @NotBlank
-    @Size(min = 10, max = 50)
-    @Column(name = "speciality", length = 50, nullable = false)
-    private String speciality;
+    @Column(name = "specialty")
+    private String specialty;
 
     @NotNull
     @NotBlank
@@ -41,9 +35,28 @@ public class Doctor {
     private String email;
 
     @NotNull
-    @NotBlank
-    @Size(min = 6, max = 50)
     @Column(name = "password", length = 50, nullable = false)
     private String password;
+
+    @NotNull
+    @Column(name = "height")
+    private double height;
+
+    @NotNull
+    @Column(name = "weight")
+    private double weight;
+
+    @NotNull
+    @Column(name = "body_mass_index")
+    private double body_mass_index;
+
+    @Column(name ="profile_image")
+    private String profile_image;
+
+    @Column(name = "puntuacion")
+    private String puntuation;
+
+    @Column(name = "costo")
+    private String costo;
 
 }

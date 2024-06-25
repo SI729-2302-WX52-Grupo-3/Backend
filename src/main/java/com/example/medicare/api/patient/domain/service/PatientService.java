@@ -8,7 +8,7 @@ import java.util.List;
 public interface PatientService {
 
     Patient save(Patient patient);
-    Patient update(Patient patient, Integer id);
+    Patient update(Patient patient);
     Patient fetchById(Integer id);
     boolean deleteById(Integer id);
     List<Patient> fetchAll();

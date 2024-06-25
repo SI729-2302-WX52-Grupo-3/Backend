@@ -39,4 +39,20 @@ public class Payment {
   @Min(value = 0)
   @Column(name = "retention_amount", columnDefinition = "decimal(10,2)")
   private double retention_amount;
+
+  @NotNull
+  @Column(name = "card_holder_name")
+  private String card_holder_name;
+
+  @NotNull
+  @Column(name = "card_number")
+  private String card_number;
+
+  @NotNull
+  @Column(name = "card_expiration_date")
+  private String card_expiration_date;
+
+  @NotNull
+  @Column(name = "card_cvv")
+  private String card_cvv;
 }

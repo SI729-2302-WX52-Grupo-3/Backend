@@ -6,6 +6,7 @@ import com.example.medicare.api.appointment.mapping.AppointmentMapper;
 import com.example.medicare.api.appointment.resource.AppointmentResource;
 import com.example.medicare.api.shared.exception.InternalServerErrorException;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,10 +22,17 @@ public class AppointmentController {
 
     @PostMapping
     public ResponseEntity<AppointmentResource> save(@RequestBody Appointment appointment){
-        return new ResponseEntity<>(
-                appointmentMapper.toResource(appointmentService.save(appointment)),
-                org.springframework.http.HttpStatus.CREATED
-        );
+        Appointment appointment1 = appointmentService.save(appointment);
+
+        if(appointment1 != null){
+            return new ResponseEntity<>(
+                    appointmentMapper.toResource(appointment1),
+                    HttpStatus.OK
+            );
+        }
+        else{
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
     }
 
     @GetMapping("/{id}")

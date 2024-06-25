@@ -31,21 +31,29 @@ public class DoctorServiceImpl implements DoctorService {
     }
 
     @Override
-    public Doctor update(Doctor doctor, Integer id) {
-        Doctor existingDoctor = fetchById(id);
+    public Doctor update(Doctor doctor) {
+        Doctor existingDoctor = fetchById(doctor.getId());
 
         if(existingDoctor != null){
-            existingDoctor.setSpeciality(doctor.getSpeciality());
+            existingDoctor.setSpecialty(doctor.getSpecialty());
             existingDoctor.setEmail(doctor.getEmail());
             existingDoctor.setPassword(doctor.getPassword());
             existingDoctor.setName(doctor.getName());
             existingDoctor.setLastname(doctor.getLastname());
+            existingDoctor.setCosto(doctor.getCosto());
+            existingDoctor.setProfile_image(doctor.getProfile_image());
+            existingDoctor.setPuntuation(doctor.getPuntuation());
+            existingDoctor.setWeight(doctor.getWeight());
+            existingDoctor.setHeight(doctor.getHeight());
+            existingDoctor.setBody_mass_index(doctor.getBody_mass_index());
+            existingDoctor.setProfile_image(doctor.getProfile_image());
+
 
             return doctorRepository.save(existingDoctor);
 
         }
         else{
-            throw new FetchIdNotFoundException("Doctor", id);
+            throw new FetchIdNotFoundException("Doctor", doctor.getId());
         }
 
     }

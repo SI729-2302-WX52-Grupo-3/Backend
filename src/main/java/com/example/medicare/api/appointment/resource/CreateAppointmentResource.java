@@ -26,11 +26,9 @@ public class CreateAppointmentResource {
     @Column(name = "description", length = 500)
     private String description;
 
-    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "patient_id")
-    private Patient patient;
+    private Integer patient_id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "doctor_id")
-    private Doctor doctor;
+    private Integer doctor_id;
 }
